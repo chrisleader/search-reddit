@@ -7,7 +7,7 @@ import Posts from "../Posts/Posts";
 
 const Home = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [results, setResults] = useState('');
+    const [results, setResults] = useState({});
 
     const onChange = ({target}) => {
         setSearchQuery(target);

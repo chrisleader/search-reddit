@@ -1,11 +1,18 @@
 import React from "react";
 
 const Posts = ({results}) => {
-    return (
-        <div>
-            {results}
-        </div>
-    )
+    if (results = {}) {
+        return (
+            <div>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                {results}
+            </div>
+        )
+    }
 }
 
 export default Posts;
