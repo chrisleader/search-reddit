@@ -3,7 +3,15 @@ import React from "react";
 const Home = () => {
     return (
         <div>
-            Testing
+            <form>
+                <input
+                placeholder="search">
+
+                </input>
+                <button>
+
+                </button>
+            </form>
         </div>
     )
 }
