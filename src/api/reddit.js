@@ -8,7 +8,7 @@ const getPosts = async (searchTerm) => {
         const response = await fetch(urlToFetch);
         if (response.ok) {
             const jsonResponse = await response.json();
-            console.log(jsonResponse);
+            //const string = JSON.stringify(jsonResponse);
             return jsonResponse;
         }
     } catch(error) {

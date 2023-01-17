@@ -10,21 +10,22 @@ const Home = () => {
     const [results, setResults] = useState({});
 
     const onChange = ({target}) => {
-        setSearchQuery(target);
+        setSearchQuery(target.value);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setResults(getPosts(searchQuery));
+        getPosts(searchQuery).then(response => setResults(response));
       }
 
     return (
         <div>
             <Logo className="logo"/>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} type="search">
                 <input
                     type="text"
                     placeholder="search"
+                    value={searchQuery}
                     onChange={onChange}
                 />
                 <button
