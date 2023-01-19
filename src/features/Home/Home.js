@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as Logo } from './logo.svg'
 import './Home.css';
 import { getPosts } from "../../api/reddit";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Posts from "../Posts/Posts";
 
 const Home = () => {
