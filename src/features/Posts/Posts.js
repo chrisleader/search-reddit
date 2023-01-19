@@ -14,7 +14,7 @@ const Posts = ({results}) => {
                 {results.map((item, index) => (
                 <div key={index}>
                     <p>{item.data.title}</p>
-                    <img src={item.data.thumbnail} alt={item.data.title} />
+                    {['self', 'default', 'nsfw'].indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
                 </div>
             ))}
             </div>
