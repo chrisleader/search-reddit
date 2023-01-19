@@ -13,8 +13,10 @@ const Posts = ({results}) => {
             <div>
                 {results.map((item, index) => (
                 <div key={index}>
-                    <p>{item.data.title}</p>
-                    {['self', 'default', 'nsfw'].indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
+                    <p>
+                        <a href={item.data.url} target='_blank' rel='noreferrer noopener'>{item.data.title}</a>
+                    </p>
+                    {['self', 'default', 'nsfw', 'spoiler'].indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
                 </div>
             ))}
             </div>
