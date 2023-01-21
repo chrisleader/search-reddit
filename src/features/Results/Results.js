@@ -1,6 +1,8 @@
 import React from "react";
 
-const Posts = ({results}) => {
+const Results = ({results}) => {
+    const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler'];
+
     if (!results.length) {
         return (
             <div>
@@ -16,7 +18,7 @@ const Posts = ({results}) => {
                     <p>
                         <a href={item.data.url} target='_blank' rel='noreferrer noopener'>{item.data.title}</a>
                     </p>
-                    {['self', 'default', 'nsfw', 'spoiler'].indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
+                    {thumbnailExceptions.indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
                 </div>
             ))}
             </div>
@@ -24,4 +26,4 @@ const Posts = ({results}) => {
     }
 }
 
-export default Posts;
+export default Results;
