@@ -1,4 +1,44 @@
+.SearchForm {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height:inherit;
+}
+
 .logo {
     width: 200px;
     height: 100px;
 }
+
+  /* Style the input field to resemble Google's search bar */
+input[type="text"] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ff4500;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 550px;
+    outline: none;
+  }
+  
+  /* Style the submit button to resemble Google's search bar */
+button {
+    background-color: #f8f9fa;
+    height: 30px;
+    max-width: 155px;
+    color: #3c4043;
+    padding: 15px 20px 30px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  #button-span {
+    padding: 5px;
+  }

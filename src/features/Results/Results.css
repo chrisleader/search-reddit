@@ -1,0 +1,19 @@
+/* Style the results section to resemble Google's results page */
+.Results {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+  
+  /* Style the result titles to resemble Google's results page */
+  .Results h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  /* Style the result links to resemble Google's results page */
+  .Results a {
+    color: #000000;
+    text-decoration: none;
+  }
+  

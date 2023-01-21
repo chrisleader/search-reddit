@@ -17,7 +17,7 @@ const Results = ({results, setResults}) => {
     }, [term]);
     
     return (
-        <div>
+        <div className="Results">
             {results.map((item, index) => (
             <div key={index}>
                 <p>
