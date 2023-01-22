@@ -8,6 +8,7 @@ import Results from './features/Results/Results';
 function App() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+  const [buttonClicked, setButtonClicked] = useState('');
   const navigate = useNavigate();
 
   const onChange = ({target}) => {
@@ -19,7 +20,11 @@ function App() {
     try {
       const response = await getPosts(query);
       setResults(response);
-      navigate(`results/${query}`);
+      if (buttonClicked === 'ImFeelingLucky') {
+        window.location.href = response[0].data.url;
+      } else if (buttonClicked === 'RedditSearch') {
+        navigate(`results/${query}`);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<SearchForm query={query} onChange={onChange} onSubmit={onSubmit} />} />
+        <Route exact path="/" element={<SearchForm query={query} onChange={onChange} onSubmit={onSubmit} setButtonClicked={setButtonClicked} />} />
         <Route path="/results/:term" element={<Results results={results} setResults={setResults} />} />
       </Routes>
     </div>
