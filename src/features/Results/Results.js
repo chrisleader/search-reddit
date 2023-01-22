@@ -5,7 +5,7 @@ import { getPosts } from "../../api/reddit";
 import './Results.css';
 
 const Results = ({results, setResults}) => {
-    const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler'];
+    const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler', 'image'];
     const { term } = useParams();
 
     useEffect(() => {
