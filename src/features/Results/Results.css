@@ -1,22 +1,20 @@
 .ResultsContainer {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 50px;
     text-align: left;
 }
 
 .Results {
     width: 100%;
-    max-width: 600px;
+    max-width: 650px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #f8f9fa;
     margin-bottom: 20px;
     display: flex;
-    align-items: flex-start;
 }
 
 .Results h3 {
@@ -24,6 +22,7 @@
     font-weight: 500;
     margin: 0;
     flex: 1;
+    padding-right: 10px;
 }
 
 .Results a {
@@ -32,8 +31,10 @@
 }
 
 .Results img {
-    max-width: 100px;
-    margin-right: 10px;
+    width: auto;
+    height: auto;
+    max-width: 30%;
+    object-fit: contain;
 }
 
 /* .Results span {
