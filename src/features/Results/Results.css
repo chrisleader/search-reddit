@@ -1,19 +1,44 @@
-/* Style the results section to resemble Google's results page */
+.ResultsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px;
+    text-align: left;
+}
+
 .Results {
+    width: 100%;
+    max-width: 600px;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-  }
-  
-  /* Style the result titles to resemble Google's results page */
-  .Results h3 {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.Results h3 {
+    font-size: 16px;
+    font-weight: 500;
     margin: 0;
-    font-size: 18px;
-  }
-  
-  /* Style the result links to resemble Google's results page */
-  .Results a {
-    color: #000000;
+    flex: 1;
+}
+
+.Results a {
+    color: #000;
     text-decoration: none;
-  }
-  
+}
+
+.Results img {
+    max-width: 100px;
+    margin-right: 10px;
+}
+
+/* .Results span {
+    font-size: 14px;
+    color: #828282;
+    margin-top: 5px;
+    display: block;
+} */

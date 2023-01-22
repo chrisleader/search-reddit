@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getPosts } from "../../api/reddit";
+import './Results.css';
 
 const Results = ({results, setResults}) => {
     const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler'];
@@ -17,12 +18,12 @@ const Results = ({results, setResults}) => {
     }, [term]);
     
     return (
-        <div className="Results">
+        <div className="ResultsContainer">
             {results.map((item, index) => (
-            <div key={index}>
-                <p>
+            <div key={index} className ="Results">
+                <h3>
                     <a href={item.data.url} target='_blank' rel='noreferrer noopener'>{item.data.title}</a>
-                </p>
+                </h3>
                 {thumbnailExceptions.indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
             </div>
         ))}
