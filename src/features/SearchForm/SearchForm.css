@@ -14,7 +14,6 @@
     height: 100px;
 }
 
-  /* Style the input field to resemble Google's search bar */
 input[type="text"] {
     padding: 12px 20px;
     margin: 8px 0;
@@ -26,11 +25,9 @@ input[type="text"] {
     outline: none;
   }
   
-  /* Style the submit button to resemble Google's search bar */
 button {
     background-color: #f8f9fa;
     height: 30px;
-    /* max-width: 155px; */
     color: #3c4043;
     padding: 15px 20px 30px 20px;
     margin: 8px 0;
@@ -55,9 +52,4 @@ button {
     input[type="text"] {
         width: 90%;
     }
-  
-    /* button {
-        width: auto;
-        white-space: nowrap;
-    } */
 }
