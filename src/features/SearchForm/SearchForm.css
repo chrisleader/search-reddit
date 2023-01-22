@@ -43,3 +43,18 @@ button {
   #button-span {
     padding: 5px;
   }
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 150px;
+        height: 75px;
+    }
+
+    input[type="text"] {
+        width: 90%;
+    }
+  
+    button {
+        max-width: 80%;
+    }
+}
