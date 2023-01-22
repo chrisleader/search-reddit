@@ -30,7 +30,7 @@ input[type="text"] {
 button {
     background-color: #f8f9fa;
     height: 30px;
-    max-width: 155px;
+    /* max-width: 155px; */
     color: #3c4043;
     padding: 15px 20px 30px 20px;
     margin: 8px 0;
@@ -38,6 +38,8 @@ button {
     border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
+    width: auto;
+    white-space: nowrap;
   }
 
   #button-span {
@@ -54,7 +56,8 @@ button {
         width: 90%;
     }
   
-    button {
-        max-width: 80%;
-    }
+    /* button {
+        width: auto;
+        white-space: nowrap;
+    } */
 }
