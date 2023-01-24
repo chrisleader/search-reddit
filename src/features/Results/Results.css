@@ -12,14 +12,11 @@
 
 .ResultsForm {
     flex: 2;
-    display: flex;
-    justify-content: space-between;
 }
     
 .ResultsLogo {
     width: 150px;
     height: 75px;
-    padding-right: 12px;
     flex: 1;
 }
     
@@ -30,22 +27,8 @@
     border: 2px solid #ff4500;
     border-radius: 10px;
     font-size: 16px;
-    width: 350px;
+    width: 450px;
     outline: none;
-}
-    
-.ResultsButton {
-    background-color: #f8f9fa;
-    height: 30px;
-    color: #3c4043;
-    padding: 15px 20px 30px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    width: auto;
-    white-space: nowrap;
 }
 
 @media only screen and (max-width: 600px) {
@@ -71,10 +54,6 @@
     
     .ResultsInput {
         width: 100%;
-    }
-    
-    .ResultsButton {
-        display: none;
     }
 }
 

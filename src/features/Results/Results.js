@@ -41,13 +41,6 @@ const Results = ({ onChange, onSubmit }) => {
                         onChange={onChange}
                         className="ResultsInput"
                     />
-                    <button
-                        id="RedditSearch"
-                        className="ResultsButton"
-                        type="submit"
-                        onClick={handleClick}>
-                        Reddit Search
-                    </button>
                 </form>
             </div>
             {results.map((item, index) => (
