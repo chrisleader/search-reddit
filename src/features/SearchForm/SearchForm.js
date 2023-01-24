@@ -5,7 +5,7 @@ import { setButtonClicked } from "../../store/redditSlice";
 import './SearchForm.css';
 
 const SearchForm = ({ onChange, onSubmit }) => {
-    const {query } = useSelector(state => state.reddit);
+    const { query } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
 
     const handleClick = (e) => {
