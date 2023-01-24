@@ -32,7 +32,7 @@ const Results = ({ onChange, onSubmit }) => {
                 <form onSubmit={onSubmit} type="search" className="ResultsForm">
                     <input
                         type="text"
-                        placeholder={query}
+                        placeholder={term}
                         value={query}
                         onChange={onChange}
                         className="ResultsInput"
