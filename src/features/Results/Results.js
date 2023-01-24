@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getPosts } from "../../helpers/reddit";
 import { useSelector, useDispatch } from "react-redux";
-import { setResults, setButtonClicked } from "../../store/redditSlice";
+import { setResults } from "../../store/redditSlice";
 import time from "../../helpers/time";
 import formatNum from "../../helpers/formatNum";
 import { ReactComponent as Logo } from './logo.svg'
@@ -22,10 +22,6 @@ const Results = ({ onChange, onSubmit }) => {
         }
       })();
     }, [term]);
-
-    const handleClick = (e) => {
-        dispatch(setButtonClicked(e.target.id));
-    }
     
     return (
         <div className="ResultsContainer">
