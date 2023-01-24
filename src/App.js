@@ -1,29 +1,29 @@
 import './App.css';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { getPosts } from './api/reddit';
-import { useState } from 'react';
 import SearchForm from './features/SearchForm/SearchForm';
 import Results from './features/Results/Results';
+import { setQuery, setButtonClicked, setResults } from './store/redditSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const [buttonClicked, setButtonClicked] = useState('');
+  const reddit = useSelector(state => state.reddit);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onChange = ({target}) => {
-    setQuery(target.value);
+    dispatch(setQuery(target.value));
   }
 
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await getPosts(query);
-      setResults(response);
-      if (buttonClicked === 'ImFeelingLucky') {
+      const response = await getPosts(reddit.query);
+      dispatch(setResults(response));
+      if (reddit.buttonClicked === 'ImFeelingLucky') {
         window.location.href = response[0].data.url;
-      } else if (buttonClicked === 'RedditSearch') {
-        navigate(`results/${query}`);
+      } else if (reddit.buttonClicked === 'RedditSearch') {
+        navigate(`results/${reddit.query}`);
       }
     } catch (error) {
       console.log(error);
@@ -33,8 +33,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<SearchForm query={query} onChange={onChange} onSubmit={onSubmit} setButtonClicked={setButtonClicked} />} />
-        <Route path="/results/:term" element={<Results results={results} setResults={setResults} />} />
+        <Route exact path="/" element={<SearchForm query={reddit.query} onChange={onChange} onSubmit={onSubmit} setButtonClicked={setButtonClicked} />} />
+        <Route path="/results/:term" element={<Results results={reddit.results} setResults={setResults} />} />
       </Routes>
     </div>
   );

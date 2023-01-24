@@ -1,10 +1,13 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { ReactComponent as Logo } from './logo.svg'
 import './SearchForm.css';
+import { useDispatch } from "react-redux";
 
 const SearchForm = ({query, onChange, onSubmit, setButtonClicked}) => {
+    const dispatch = useDispatch();
+
     const handleClick = (e) => {
-        setButtonClicked(e.target.id);
+        dispatch(setButtonClicked(e.target.id));
     }
 
     return (
