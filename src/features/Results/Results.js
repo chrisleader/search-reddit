@@ -3,8 +3,10 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getPosts } from "../../api/reddit";
 import './Results.css';
+import { useDispatch } from "react-redux";
 
 const Results = ({results, setResults}) => {
+    const dispatch = useDispatch();
     const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler', 'image'];
     const { term } = useParams();
 
@@ -12,7 +14,7 @@ const Results = ({results, setResults}) => {
       (async () => {
         if (term) {
           const response = await getPosts(term);
-          setResults(response);
+          dispatch(setResults(response));
         }
       })();
     }, [term]);
