@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
   const reddit = useSelector(state => state.reddit);
+  const {query, buttonClicked, results} = reddit;
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -18,12 +19,12 @@ function App() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await getPosts(reddit.query);
+      const response = await getPosts(query);
       dispatch(setResults(response));
-      if (reddit.buttonClicked === 'ImFeelingLucky') {
+      if (buttonClicked === 'ImFeelingLucky') {
         window.location.href = response[0].data.url;
-      } else if (reddit.buttonClicked === 'RedditSearch') {
-        navigate(`results/${reddit.query}`);
+      } else if (buttonClicked === 'RedditSearch') {
+        navigate(`results/${query}`);
       }
     } catch (error) {
       console.log(error);
@@ -33,8 +34,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<SearchForm query={reddit.query} onChange={onChange} onSubmit={onSubmit} setButtonClicked={setButtonClicked} />} />
-        <Route path="/results/:term" element={<Results results={reddit.results} setResults={setResults} />} />
+        <Route exact path="/" element={<SearchForm query={query} onChange={onChange} onSubmit={onSubmit} setButtonClicked={setButtonClicked} />} />
+        <Route path="/results/:term" element={<Results results={results} setResults={setResults} />} />
       </Routes>
     </div>
   );
