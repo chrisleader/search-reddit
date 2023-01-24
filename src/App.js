@@ -3,11 +3,11 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import { getPosts } from './helpers/reddit';
 import SearchForm from './features/SearchForm/SearchForm';
 import Results from './features/Results/Results';
-import { setQuery, setButtonClicked, setResults } from './store/redditSlice';
+import { setQuery, setResults } from './store/redditSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
-  const {query, buttonClicked, results} = useSelector(state => state.reddit);
+  const {query, buttonClicked } = useSelector(state => state.reddit);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -33,8 +33,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<SearchForm query={query} onChange={onChange} onSubmit={onSubmit} setButtonClicked={setButtonClicked} />} />
-        <Route path="/results/:term" element={<Results results={results} setResults={setResults} />} />
+        <Route exact path="/" element={<SearchForm onChange={onChange} onSubmit={onSubmit} />} />
+        <Route path="/results/:term" element={<Results />} />
       </Routes>
     </div>
   );

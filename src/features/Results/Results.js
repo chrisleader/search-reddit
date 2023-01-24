@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
 import { getPosts } from "../../helpers/reddit";
-import './Results.css';
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setResults } from "../../store/redditSlice";
 import time from "../../helpers/time";
 import formatNum from "../../helpers/formatNum";
+import './Results.css';
 
-const Results = ({results, setResults}) => {
+const Results = () => {
+    const { results  } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
     const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler', 'image'];
     const { term } = useParams();

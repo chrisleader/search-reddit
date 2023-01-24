@@ -1,9 +1,11 @@
 import { React } from "react";
 import { ReactComponent as Logo } from './logo.svg'
 import './SearchForm.css';
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setButtonClicked } from "../../store/redditSlice";
 
-const SearchForm = ({query, onChange, onSubmit, setButtonClicked}) => {
+const SearchForm = ({ onChange, onSubmit }) => {
+    const {query } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
 
     const handleClick = (e) => {
