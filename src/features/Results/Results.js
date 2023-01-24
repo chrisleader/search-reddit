@@ -1,9 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { getPosts } from "../../api/reddit";
+import { getPosts } from "../../helpers/reddit";
 import './Results.css';
 import { useDispatch } from "react-redux";
+import daysAgo from "../../helpers/time";
+import formatNum from "../../helpers/formatNum";
 
 const Results = ({results, setResults}) => {
     const dispatch = useDispatch();
@@ -23,6 +25,11 @@ const Results = ({results, setResults}) => {
         <div className="ResultsContainer">
             {results.map((item, index) => (
             <div key={index} className ="Results">
+                <p>r/{item.data.subreddit}</p>
+                <p>Posted by {item.data.author}</p>
+                <p>{daysAgo(item.data.created_utc)} days ago</p>
+                <p>{formatNum(item.data.ups)} upvotes</p>
+                <p>{formatNum(item.data.num_comments)} comments</p>
                 <h3>
                     <a href={item.data.url} target='_blank' rel='noreferrer noopener'>{item.data.title}</a>
                 </h3>

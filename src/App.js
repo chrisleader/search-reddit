@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { getPosts } from './api/reddit';
+import { getPosts } from './helpers/reddit';
 import SearchForm from './features/SearchForm/SearchForm';
 import Results from './features/Results/Results';
 import { setQuery, setButtonClicked, setResults } from './store/redditSlice';
