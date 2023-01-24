@@ -14,7 +14,7 @@
     height: 100px;
 }
 
-input[type="text"] {
+.SearchForm input[type="text"] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -25,7 +25,7 @@ input[type="text"] {
     outline: none;
   }
   
-button {
+  .SearchForm button {
     background-color: #f8f9fa;
     height: 30px;
     color: #3c4043;
@@ -44,12 +44,18 @@ button {
   }
 
 @media only screen and (max-width: 600px) {
-    .logo {
-        width: 150px;
-        height: 75px;
-    }
+  .logo {
+    height: auto;
+    width: 180;
+    padding-bottom: 5px;
+    text-align: center;
+  }
 
-    input[type="text"] {
-        width: 90%;
-    }
+  .SearchForm input[type="text"] {
+      width: 100%;
+  }
+
+  .SearchForm button {
+    /* display: none; */
+  }
 }

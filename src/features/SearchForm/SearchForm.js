@@ -1,8 +1,8 @@
 import { React } from "react";
 import { ReactComponent as Logo } from './logo.svg'
-import './SearchForm.css';
 import { useSelector, useDispatch } from "react-redux";
 import { setButtonClicked } from "../../store/redditSlice";
+import './SearchForm.css';
 
 const SearchForm = ({ onChange, onSubmit }) => {
     const {query } = useSelector(state => state.reddit);

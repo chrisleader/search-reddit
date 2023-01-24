@@ -1,17 +1,18 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getPosts } from "../../helpers/reddit";
 import { useSelector, useDispatch } from "react-redux";
-import { setResults } from "../../store/redditSlice";
+import { setResults, setButtonClicked } from "../../store/redditSlice";
 import time from "../../helpers/time";
 import formatNum from "../../helpers/formatNum";
+import { ReactComponent as Logo } from './logo.svg'
 import './Results.css';
 
-const Results = () => {
-    const { results  } = useSelector(state => state.reddit);
+const Results = ({ onChange, onSubmit }) => {
+    const { query, results } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
-    const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler', 'image'];
     const { term } = useParams();
+    const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler', 'image'];
 
     useEffect(() => {
       (async () => {
@@ -21,9 +22,34 @@ const Results = () => {
         }
       })();
     }, [term]);
+
+    const handleClick = (e) => {
+        dispatch(setButtonClicked(e.target.id));
+    }
     
     return (
         <div className="ResultsContainer">
+            <div className="HeaderContainer">
+                <Link to="/">
+                    <Logo className="ResultsLogo"/>
+                </Link>
+                <form onSubmit={onSubmit} type="search" className="ResultsForm">
+                    <input
+                        type="text"
+                        placeholder={query}
+                        value={query}
+                        onChange={onChange}
+                        className="ResultsInput"
+                    />
+                    <button
+                        id="RedditSearch"
+                        className="ResultsButton"
+                        type="submit"
+                        onClick={handleClick}>
+                        Reddit Search
+                    </button>
+                </form>
+            </div>
             {results.map((item, index) => (
             <div key={index} className="Results">
             <div className="ResultsRowTop">

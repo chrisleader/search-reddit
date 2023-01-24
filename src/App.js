@@ -34,7 +34,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route exact path="/" element={<SearchForm onChange={onChange} onSubmit={onSubmit} />} />
-        <Route path="/results/:term" element={<Results />} />
+        <Route path="/results/:term" element={<Results  onChange={onChange} onSubmit={onSubmit} />} />
       </Routes>
     </div>
   );
