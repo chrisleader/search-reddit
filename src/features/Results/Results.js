@@ -24,16 +24,21 @@ const Results = ({results, setResults}) => {
     return (
         <div className="ResultsContainer">
             {results.map((item, index) => (
-            <div key={index} className ="Results">
-                <p>r/{item.data.subreddit}</p>
-                <p>Posted by {item.data.author}</p>
-                <p>{daysAgo(item.data.created_utc)} days ago</p>
-                <p>{formatNum(item.data.ups)} upvotes</p>
-                <p>{formatNum(item.data.num_comments)} comments</p>
-                <h3>
-                    <a href={item.data.url} target='_blank' rel='noreferrer noopener'>{item.data.title}</a>
-                </h3>
-                {thumbnailExceptions.indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
+            <div key={index} className="Results">
+            <div className="ResultsRowTop">
+                    <p>r/{item.data.subreddit}</p>
+                    <p>Posted by {item.data.author} {daysAgo(item.data.created_utc)} days ago</p>
+                </div>
+                <div className="ResultsRowMiddle">
+                    <h3>
+                        <a href={item.data.url} target='_blank' rel='noreferrer noopener'>{item.data.title}</a>
+                    </h3>
+                    {thumbnailExceptions.indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
+                </div>
+                <div className="ResultsRowBottom">
+                    <p>{formatNum(item.data.ups)} upvotes</p>
+                    <p>{formatNum(item.data.num_comments)} comments</p>
+                </div>
             </div>
         ))}
         </div>
