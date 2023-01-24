@@ -7,7 +7,7 @@ import { setQuery, setResults } from './store/redditSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
-  const {query, buttonClicked } = useSelector(state => state.reddit);
+  const { query, buttonClicked } = useSelector(state => state.reddit);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
