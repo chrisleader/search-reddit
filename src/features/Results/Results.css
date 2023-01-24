@@ -19,16 +19,16 @@
 .ResultsRowTop {
     display: flex;
     flex-direction:row;
-    justify-content:left;
-    padding-bottom: 10px;
     flex-wrap: wrap;
+    justify-content:left;
+    /* padding-bottom: 5px; */
 }
 
 .ResultsRowMiddle {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    padding-bottom: 10px;
+    /* padding-bottom: 5px; */
 }
 
 .ResultsRowBottom {
@@ -36,10 +36,6 @@
     flex-direction: row;
     justify-content: left;
     flex-wrap: wrap;
-}
-
-#ResultsRow1 {
-    padding: 100px;
 }
 
 .Results h3 {

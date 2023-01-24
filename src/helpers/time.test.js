@@ -1,5 +1,5 @@
-import daysAgo from "./time";
+import time from "./time";
 
 test('returns days', () => {
-    console.log((daysAgo(1672627223)));
+    console.log((time(1672627223)));
   });

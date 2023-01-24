@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { getPosts } from "../../helpers/reddit";
 import './Results.css';
 import { useDispatch } from "react-redux";
-import daysAgo from "../../helpers/time";
+import time from "../../helpers/time";
 import formatNum from "../../helpers/formatNum";
 
 const Results = ({results, setResults}) => {
@@ -27,7 +27,7 @@ const Results = ({results, setResults}) => {
             <div key={index} className="Results">
             <div className="ResultsRowTop">
                     <p>r/{item.data.subreddit}</p>
-                    <p>Posted by {item.data.author} {daysAgo(item.data.created_utc)} days ago</p>
+                    <p>Posted by {item.data.author} {time(item.data.created_utc)} ago</p>
                 </div>
                 <div className="ResultsRowMiddle">
                     <h3>
