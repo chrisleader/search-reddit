@@ -1,13 +1,14 @@
 .HeaderContainer {
     text-align: center;
-    display:inline-flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    display: flex;
+    flex-wrap: none;
+    justify-content:space-evenly;
     align-items: center;
     padding: 0px;
     height:auto;
     width: 100%;
-    max-width: 650px;
+    max-width: 600px;
+    padding: 0px 0px 15px 0px;
 }
 
 .ResultsForm {
@@ -17,24 +18,24 @@
 .ResultsLogo {
     width: 150px;
     height: 75px;
-    padding-right: 10px;
+    padding-right: 5px;
     flex: 1;
 }
     
 .ResultsInput {
-    padding: 12px 12px;
-    margin: 8px 5px 8px 0px;
+    padding: 12px 20px;
+    margin: 8px 5px;
     box-sizing:border-box;
     border: 2px solid #ff4500;
     border-radius: 10px;
     font-size: 16px;
-    width: 225px;
+    width:max-content;
     outline: none;
 }
 
 select {
     padding: 12px 0px 12px 0px;
-    margin: 8px 4px;
+    margin: 8px 5px;
     box-sizing:border-box;
     border: 1px solid #ddd;
     background-color: #f8f9fa !important;
@@ -46,26 +47,32 @@ select {
 
 @media only screen and (max-width: 600px) {
     .HeaderContainer {
-        text-align: center;
         display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+        flex-direction: column;
         align-items: center;
+    }
+    
+    .ResultsForm {
+        width: 90%;
+        padding: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .ResultsLogo {
+        height: 60%;
+        width: 60%;
+        padding: 0;
         padding-bottom: 5px;
+        text-align: center;
     }
 
-    .ResultsLogo {
-        width: 150px;
-        height: 75px;
-    }
-        
     .ResultsInput {
-        box-sizing:border-box;
-        border: 2px solid #ff4500;
-        border-radius: 10px;
-        font-size: 16px;
-        width: 295px;
-        outline: none;
+        width: 100%;
+    }
+
+    select {
+        display: none; 
     }
 }
 
