@@ -54,8 +54,4 @@
   .SearchForm input[type="text"] {
       width: 100%;
   }
-
-  .SearchForm button {
-    /* display: none; */
-  }
 }
