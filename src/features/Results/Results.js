@@ -1,27 +1,27 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { getPosts } from "../../helpers/reddit";
 import { useSelector, useDispatch } from "react-redux";
 import { setResults } from "../../store/redditSlice";
-import time from "../../helpers/time";
+import formatTime from "../../helpers/formatTime";
 import formatNum from "../../helpers/formatNum";
 import { ReactComponent as Logo } from './logo.svg'
 import './Results.css';
 
-const Results = ({ onChange, onSubmit }) => {
-    const { query, results } = useSelector(state => state.reddit);
+const Results = ({ onQueryChange, onSortChange, onTimeChange, onSubmit }) => {
+    const { query, sort, time, results } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
-    const { term } = useParams();
+    const navigate = useNavigate();
+    //const { term } = useParams();
     const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler', 'image'];
 
     useEffect(() => {
       (async () => {
-        if (term) {
-          const response = await getPosts(term);
-          dispatch(setResults(response));
-        }
+        const response = await getPosts(query, sort, time);
+        dispatch(setResults(response));
+        navigate(`?query=${query}&sort=${sort}&time=${time}`);
       })();
-    }, [term]);
+    }, [sort, time]);
     
     return (
         <div className="ResultsContainer">
@@ -32,18 +32,35 @@ const Results = ({ onChange, onSubmit }) => {
                 <form onSubmit={onSubmit} type="search" className="ResultsForm">
                     <input
                         type="text"
-                        placeholder={term}
+                        placeholder={query}
                         value={query}
-                        onChange={onChange}
+                        onChange={onQueryChange}
                         className="ResultsInput"
                     />
                 </form>
+                <label for="sort"></label>
+                <select name="sort" id="sort" onChange={onSortChange}>
+                    <option value="relevance" selected>Relevance</option>
+                    <option value="hot">Hot</option>
+                    <option value="top">Top</option>
+                    <option value="new">New</option>
+                    <option value="comments">Most Comments</option>
+                </select>
+                <label for="time"></label>
+                <select name="time" id="time" onChange={onTimeChange}>
+                    <option value="all" selected>All Time</option>
+                    <option value="year">Past Year</option>
+                    <option value="month">Past Month</option>
+                    <option value="week">Past Week</option>
+                    <option value="day">Past 24 Hours</option>
+                    <option value="hour">Past Hour</option>
+                </select>
             </div>
             {results.map((item, index) => (
             <div key={index} className="Results">
             <div className="ResultsRowTop">
                     <p>r/{item.data.subreddit}</p>
-                    <p>Posted by {item.data.author} {time(item.data.created_utc)} ago</p>
+                    <p>Posted by {item.data.author} {formatTime(item.data.created_utc)} ago</p>
                 </div>
                 <div className="ResultsRowMiddle">
                     <h3>

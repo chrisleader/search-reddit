@@ -1,8 +1,10 @@
 const baseUrl = 'https://www.reddit.com';
 
-const getPosts = async (searchTerm) => {
+const getPosts = async (query, sort, time) => {
     const searchSyntax = '/search.json?q=';
-    const urlToFetch = `${baseUrl}${searchSyntax}${searchTerm}`;
+    const sortSyntax = '&sort=';
+    const timeSyntax = '&t=';
+    const urlToFetch = `${baseUrl}${searchSyntax}${query}${sortSyntax}${sort}${timeSyntax}${time}`;
 
     try {
         const response = await fetch(urlToFetch);

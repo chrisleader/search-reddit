@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setButtonClicked } from "../../store/redditSlice";
 import './SearchForm.css';
 
-const SearchForm = ({ onChange, onSubmit }) => {
+const SearchForm = ({ onQueryChange, onSubmit }) => {
     const { query } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
 
@@ -19,7 +19,7 @@ const SearchForm = ({ onChange, onSubmit }) => {
                 <input
                     type="text"
                     value={query}
-                    onChange={onChange}
+                    onChange={onQueryChange}
                 />
                 <br />
                 <button

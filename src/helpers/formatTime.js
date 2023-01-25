@@ -1,6 +1,6 @@
 const secondsSinceEpoch = Math.round(Date.now() / 1000);
 
-const time = (created_utc) => {
+const formatTime = (created_utc) => {
     let calculatedTime = Math.floor((secondsSinceEpoch - created_utc));
     const hour = 3600;
     const day = 86400;
@@ -26,4 +26,4 @@ const time = (created_utc) => {
     }
 }
 
-export default time;
+export default formatTime;

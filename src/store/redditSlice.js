@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   query: '',
+  sort: '',
+  time: '',
   buttonClicked: '',
   error: false,
   isLoading: false,
@@ -14,6 +16,12 @@ export const redditSlice = createSlice({
   reducers: {
     setQuery: (state, action) => {
       state.query = action.payload;
+    },
+    setSort: (state, action) => {
+      state.sort = action.payload;
+    },
+    setTime: (state, action) => {
+      state.time = action.payload;
     },
     setButtonClicked: (state, action) => {
       state.buttonClicked = action.payload;
@@ -39,6 +47,8 @@ export const redditSlice = createSlice({
 
 export const { 
   setQuery,
+  setSort,
+  setTime,
   setButtonClicked,
   setResults,
   // queryStart,
