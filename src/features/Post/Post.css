@@ -1,0 +1,74 @@
+.PostContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 50px 50px 50px;
+    text-align: left;
+}
+
+.Post {
+    width: 100%;
+    max-width: 650px;
+    padding: 0px 15px 0px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    margin-bottom: 15px;
+}
+
+.PostRowTop {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:left;
+    margin: 15px 5px 15px 5px;
+}
+
+.PostRowMiddle {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 15px 5px 25px 5px;
+}
+
+.PostRowBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin: 15px 5px 5px 5px;
+}
+
+.Post h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    flex: 1;
+    padding-right: 10px;
+    align-self: flex-start;
+}
+
+.Post p {
+    font-size: 14px;
+    font-weight: 400;
+    padding-right: 20px;
+    color: grey;
+    margin: 0px 0px 10px 0px;
+}
+
+.Post img {
+    width: auto;
+    height: auto;
+    max-width: 50%;
+    border-radius: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+    .PostContainer {
+        padding: 20px 30px 10px 30px;
+    }
+
+    .Post {
+        padding: 0px 10px 0px 10px;
+    }
+}

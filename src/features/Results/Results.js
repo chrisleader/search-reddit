@@ -15,11 +15,11 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
     const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler', 'image'];
 
     useEffect(() => {
-      (async () => {
-        const response = await getPosts(query, sort, time);
-        dispatch(setResults(response));
         navigate(`?query=${query}&sort=${sort}&time=${time}`);
-      })();
+        (async () => {
+            const response = await getPosts(query, sort, time);
+            dispatch(setResults(response));
+        })();
     }, [sort, time]);
     
     return (
@@ -63,7 +63,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                 </div>
                 <div className="ResultsRowMiddle">
                     <h3>
-                        <a href={item.data.url} target='_blank' rel='noreferrer noopener'>{item.data.title}</a>
+                    <Link to={`/posts/${index}`}>{item.data.title}</Link>
                     </h3>
                     {thumbnailExceptions.indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
                 </div>

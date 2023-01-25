@@ -1,6 +1,6 @@
 const baseUrl = 'https://www.reddit.com';
 
-const getPosts = async (query, sort, time) => {
+export const getPosts = async (query, sort, time) => {
     const searchSyntax = '/search.json?q=';
     const sortSyntax = '&sort=';
     const timeSyntax = '&t=';
@@ -15,6 +15,16 @@ const getPosts = async (query, sort, time) => {
     } catch(error) {
         console.log(error);
     }
-}
+};
 
-export { getPosts };
+export const getComments = async (url) => {
+    try {
+        const response = await fetch(`${url}.json`);
+        if (response.ok) {
+            const jsonResponse = await response.json();
+            return jsonResponse;
+        }
+    } catch(error) {
+        console.log(error);
+    }
+};

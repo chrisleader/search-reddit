@@ -9,12 +9,12 @@ body {
 }
 
 a {
-  color: blue; /* unvisited links */
+  color: black; /* unvisited links */
   text-decoration: none; /* remove underline */
 }
 
 a:visited {
-  color: purple; /* visited links */
+  color: grey; /* visited links */
 }
 
 a:hover {

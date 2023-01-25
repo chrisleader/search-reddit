@@ -7,7 +7,8 @@ const initialState = {
   buttonClicked: '',
   error: false,
   isLoading: false,
-  results: []
+  results: [],
+  comments: {}
 };
 
 export const redditSlice = createSlice({
@@ -29,6 +30,9 @@ export const redditSlice = createSlice({
     setResults: (state, action) => {
       state.results = action.payload;
     },
+    setComments: (state, action) => {
+      state.comments = action.payload;
+    }
     // queryStart: (state) => {
     //     state.isLoading = true;
     //     state.error = false;
@@ -51,6 +55,7 @@ export const {
   setTime,
   setButtonClicked,
   setResults,
+  setComments,
   // queryStart,
   // querySuccess,
   // queryFailure,
