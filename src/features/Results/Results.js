@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { getPosts } from "../../helpers/reddit";
 import { useSelector, useDispatch } from "react-redux";
 import { setResults } from "../../store/redditSlice";
@@ -8,11 +8,10 @@ import formatNum from "../../helpers/formatNum";
 import { ReactComponent as Logo } from './logo.svg'
 import './Results.css';
 
-const Results = ({ onQueryChange, onSortChange, onTimeChange, onSubmit }) => {
+const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
     const { query, sort, time, results } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    //const { term } = useParams();
     const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler', 'image'];
 
     useEffect(() => {
