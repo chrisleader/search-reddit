@@ -7,6 +7,7 @@ import { getPosts } from './helpers/reddit';
 import SearchForm from './features/SearchForm/SearchForm';
 import Results from './features/Results/Results';
 import Post from './features/Post/Post';
+import NotFound from './features/NotFound/NotFound';
 
 function App() {
   const { query, sort, time, buttonClicked } = useSelector(state => state.reddit);
@@ -46,6 +47,7 @@ function App() {
         <Route exact path="/" element={<SearchForm onQueryChange={onQueryChange} onSubmit={onSubmit} />} />
         <Route path="/results/*" element={<Results onQueryChange={onQueryChange} onSortChange={onSortChange} onTimeChange={onTimeChange} onSubmit={onSubmit} />} />
         <Route path="/posts/:index" element={<Post />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
