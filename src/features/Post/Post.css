@@ -37,6 +37,7 @@
     flex-direction: row;
     justify-content: left;
     margin: 0px 5px 0px 5px;
+    text-align: left;
     color: black;
     
     /* The following styles force URLs to wrap when they exceed their container  */

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { getComments } from "../../helpers/reddit";
 import { setComments } from "../../store/redditSlice";
@@ -34,10 +34,11 @@ const Post = () => {
                     <p>r/{post.subreddit}</p>
                     <p>Posted by {post.author} {formatTime(post.created_utc)} ago</p>
                 </div>
-                <div className="PostTitle">
-                    <h3>{post.title}</h3>
+                <div className="PostMiddle">
+                        {!post.url.includes('reddit.com') && <a href={post.url} target="_blank"><h3>{post.title}</h3></a>}
+                        {post.url.includes('reddit.com') && <h3>{post.title}</h3>}
                 </div>
-                <div className ="PostImage">
+                <div className ="PostMiddle">
                     {post.url_overridden_by_dest
                     && !post.url_overridden_by_dest.includes('thttps')
                     && !post.url_overridden_by_dest.includes('v.redd')
