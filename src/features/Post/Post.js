@@ -36,7 +36,7 @@ const Post = () => {
                     <p className="PostAuthor">Posted by {post.author} {formatTime(post.created_utc)} ago</p>
                 </div>
                 <div className="PostMiddle">
-                        {!post.url.includes('reddit.com' || 'i.redd.it') && <a href={post.url} target="_blank"><h3>{post.title}</h3></a>}
+                        {!post.url.includes('reddit.com') && !post.url.includes('i.redd.it') && <a href={post.url} target="_blank"><h3>{post.title}</h3></a>}
                         {post.url.includes('reddit.com') && <h3>{post.title}</h3>}
                 </div>
                 <div className ="PostMiddle">
