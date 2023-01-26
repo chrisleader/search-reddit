@@ -28,9 +28,18 @@ const Post = () => {
                     <p>r/{post.subreddit}</p>
                     <p>Posted by {post.author} {formatTime(post.created_utc)} ago</p>
                 </div>
-                <div className="PostRowMiddle">
+                <div className="PostTitle">
                     <h3>{post.title}</h3>
-                    {post.url_overridden_by_dest && <img src={post.url_overridden_by_dest} alt={post.title} />}
+                </div>
+                <div className ="PostImage">
+                    {post.url_overridden_by_dest
+                    && !post.url_overridden_by_dest.includes('thttps')
+                    && !post.url_overridden_by_dest.includes('v.redd')
+                    && post.url_overridden_by_dest.includes('redd.it')
+                    && <img src={post.url_overridden_by_dest} alt={post.title} />}
+                </div>
+                <div className="PostText">
+                    <p>{post.selftext}</p>
                 </div>
                 <div className="PostRowBottom">
                     <p>{formatNum(post.ups)} upvotes</p>

@@ -24,11 +24,26 @@
     margin: 15px 5px 15px 5px;
 }
 
-.PostRowMiddle {
+.PostTitle {
     display: flex;
     flex-direction: row;
     justify-content: left;
     margin: 15px 5px 25px 5px;
+}
+
+.PostImage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px 5px 25px 5px;
+}
+
+.PostText p {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 15px 5px 25px 5px;
+    color: black;
 }
 
 .PostRowBottom {
@@ -48,7 +63,7 @@
     align-self: flex-start;
 }
 
-.Post p {
+.PostRowTop, .PostRowBottom p {
     font-size: 14px;
     font-weight: 400;
     padding-right: 20px;
