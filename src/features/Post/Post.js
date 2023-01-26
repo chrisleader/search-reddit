@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useParams, Link } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getComments } from "../../helpers/reddit";
-import { setComments } from "../../store/redditSlice";
+import { setComments, setResultsIndex } from "../../store/redditSlice";
 import ReactMarkdown from "react-markdown";
 import formatNum from "../../helpers/formatNum";
 import formatTime from "../../helpers/formatTime";
@@ -13,7 +13,10 @@ const Post = () => {
     const { index } = useParams();
     const post = results[index].data;
     const url = `https://www.reddit.com/${post.permalink}`
+    const location = useLocation();
     const dispatch = useDispatch();
+
+    dispatch(setResultsIndex(index));
 
     //This stores the post's comments in the Redux store.
     useEffect(() => {
@@ -27,6 +30,16 @@ const Post = () => {
     useEffect(() => {
         document.title = post.title;
     }, []);
+
+    //This ensures that the query paramters persist upon page refresh.
+    // useEffect(() => {
+    //     const searchParams = new URLSearchParams(location.search);
+    //     const index = searchParams.get('index');
+
+    //     if (index) {
+    //         dispatch(setResultsIndex(index));
+    //     }
+    // }, [location, dispatch]);
 
     return (
         <div className="PostContainer">

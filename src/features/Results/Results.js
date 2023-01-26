@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { getPosts } from "../../helpers/reddit";
 import { useSelector, useDispatch } from "react-redux";
-import { setResults, setQuery, setSort, setTime } from "../../store/redditSlice";
+import { setResults, setResultsIndex, setQuery, setSort, setTime } from "../../store/redditSlice";
 import formatTime from "../../helpers/formatTime";
 import formatNum from "../../helpers/formatNum";
 import { ReactComponent as Logo } from './logo.svg'
@@ -47,7 +47,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
         if (time) {
             dispatch(setTime(time));
         }
-    }, [location, dispatch]);
+    }, [location]);
     
     return (
         <div className="ResultsContainer">
@@ -90,7 +90,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                 </div>
                 <div className="ResultsRowMiddle">
                     <h3>
-                    <Link to={`/posts/${index}`}>{item.data.title}</Link>
+                        <Link to={`/posts/${index}`}>{item.data.title}</Link>
                     </h3>
                     {thumbnailExceptions.indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
                 </div>

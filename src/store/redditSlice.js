@@ -8,6 +8,7 @@ const initialState = {
   error: false,
   isLoading: false,
   results: [],
+  resultsIndex: 0,
   comments: []
 };
 
@@ -29,6 +30,9 @@ export const redditSlice = createSlice({
     },
     setResults: (state, action) => {
       state.results = action.payload;
+    },
+    setResultsIndex: (state, action) => {
+      state.resultsIndex = action.payload;
     },
     setComments: (state, action) => {
       state.comments = action.payload;
@@ -55,6 +59,7 @@ export const {
   setTime,
   setButtonClicked,
   setResults,
+  setResultsIndex,
   setComments,
   // queryStart,
   // querySuccess,
