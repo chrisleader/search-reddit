@@ -24,7 +24,7 @@ export const getComments = async (url) => {
         const response = await fetch(`${url}.json`);
         if (response.ok) {
             const jsonResponse = await response.json();
-            return jsonResponse;
+            return jsonResponse[1].data.children.map((item) => item.data);
         }
     } catch(error) {
         console.log(error);

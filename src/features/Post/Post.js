@@ -9,7 +9,7 @@ import formatTime from "../../helpers/formatTime";
 import './Post.css';
 
 const Post = () => {
-    const { results } = useSelector(state => state.reddit);
+    const { results, comments } = useSelector(state => state.reddit);
     const { index } = useParams();
     const post = results[index].data;
     const url = post.url;
@@ -54,6 +54,20 @@ const Post = () => {
                     <p>{formatNum(post.num_comments)} comments</p>
                 </div>
             </div>
+            {comments.map((item, index) => (
+                    <div key={index} className="Comment"> 
+                        <div className="CommentRowTop">
+                            <p>{item.author}</p>
+                            <p>{formatTime(item.created_utc)} ago</p>
+                        </div>
+                        <div className="CommentRowMiddle">
+                            {item.body}
+                        </div>
+                        <div className="CommentRowBottom">
+                            <p>{formatNum(item.ups)} upvotes</p>
+                        </div>
+                    </div>
+            ))}
         </div>
     )
 };

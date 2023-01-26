@@ -8,7 +8,7 @@ const initialState = {
   error: false,
   isLoading: false,
   results: [],
-  comments: {}
+  comments: []
 };
 
 export const redditSlice = createSlice({
