@@ -14,6 +14,7 @@ function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  //These functions update the Redux store with the user's Query, Sort and Time values.
   const onQueryChange = ({target}) => {
       dispatch(setQuery(target.value));
   }
@@ -26,6 +27,7 @@ function App() {
       dispatch(setTime(target.value));
   } 
 
+  //This retrieves posts from Reddit for a given query, dispatches the results to Redux, and then navigates accordingly depending on which button was selected.
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
