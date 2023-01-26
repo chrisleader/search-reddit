@@ -36,7 +36,7 @@ const Post = () => {
                     <p className="PostAuthor">Posted by {post.author} {formatTime(post.created_utc)} ago</p>
                 </div>
                 <div className="PostMiddle">
-                        {!post.url.includes('reddit.com') && <a href={post.url} target="_blank"><h3>{post.title}</h3></a>}
+                        {!post.url.includes('reddit.com' || 'i.redd.it') && <a href={post.url} target="_blank"><h3>{post.title}</h3></a>}
                         {post.url.includes('reddit.com') && <h3>{post.title}</h3>}
                 </div>
                 <div className ="PostMiddle">
@@ -45,15 +45,15 @@ const Post = () => {
                     && !post.url_overridden_by_dest.includes('v.redd')
                     && post.url_overridden_by_dest.includes('redd.it')
                     && <img src={post.url_overridden_by_dest} alt={post.title} />}
-                </div>
-                <div className="PostText">
-                    <ReactMarkdown>{post.selftext}</ReactMarkdown>
+                    <div className="PostText">
+                        <ReactMarkdown>{post.selftext}</ReactMarkdown>
+                    </div>
                 </div>
                 <div className="PostRowBottom">
                     <p>{formatNum(post.ups)} upvotes</p>
                     <p>{formatNum(post.num_comments)} comments</p>
                     <a href={url} target="_blank">
-                        <p>View more on Reddit</p>
+                        <p>View on Reddit</p>
                     </a>
                 </div>
             </div>

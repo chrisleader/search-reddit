@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 15px 50px 15px;
+    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
     text-align: left;
@@ -11,7 +11,7 @@
 .Post {
     max-width: 650px;
     width: 100%;
-    padding: 0px 15px 0px 15px;
+    padding: 10px 25px;
     margin-bottom: 15px;
     background-color: #f8f9fa;
     border-radius: 10px;
@@ -23,7 +23,7 @@
     flex-direction:row;
     flex-wrap: wrap;
     justify-content:space-between;
-    margin: 15px 5px 15px 5px;
+    margin: 15px 0px;
 }
 
 .PostText p {
@@ -31,7 +31,6 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: left;
-    margin: 0px 5px 0px 5px;
     text-align: left;
     color: black;
     
@@ -52,7 +51,7 @@
     display: flex;
     flex-direction: row;
     justify-content: left;
-    margin: 5px 5px 5px 5px;
+    margin: 15px 0px;
 }
 
 .PostRowBottom {
@@ -60,7 +59,7 @@
     flex-direction: row;
     justify-content: left;
     flex-wrap: wrap;
-    margin: 15px 5px 5px 5px;
+    margin: 15px 0px 0px 0px;
 }
 
 .Post h3 {
@@ -68,7 +67,6 @@
     font-weight: 500;
     margin: 0;
     flex: 1;
-    padding-right: 10px;
     align-self: flex-start;
 }
 
@@ -106,7 +104,8 @@
     margin-bottom: 15px;
     background-color: #f8f9fa;
     border-radius: 10px;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 25px;
+    border: 1px solid #ddd;
 }
 
 .CommentRowTop {
@@ -114,13 +113,14 @@
     flex-direction:row;
     flex-wrap: wrap;
     justify-content:space-between;
+    margin: 5px 0px;
 }
 
 .CommentMiddle {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    margin: 0px 5px 0px 5px;
+    margin: 15px 0px;
 }
 
 .CommentRowBottom {
@@ -128,11 +128,17 @@
     flex-direction: row;
     justify-content: left;
     flex-wrap: wrap;
-    padding-top: 15px;
+    margin: 5px 0px;
 }
 
 .CommentRowTop, .CommentRowBottom p {
     font-size: 14px;
     font-weight: 400;
     color: grey;
+}
+
+@media only screen and (max-width: 600px) {
+    .Comment {
+        padding: 0px 10px 0px 10px;
+    }
 }
