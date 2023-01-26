@@ -38,7 +38,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                     />
                 </form>
                 <label for="sort" />
-                <select name="sort" id="sort" className="sort" onChange={onSortChange}>
+                <select name="sort" id="sort" className="sort" value={sort} defaultValue={sort} onChange={onSortChange}>
                     <option value="relevance" selected>Relevance</option>
                     <option value="hot">Hot</option>
                     <option value="top">Top</option>
@@ -46,7 +46,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                     <option value="comments">Most Comments</option>
                 </select>
                 <label for="time" />
-                <select name="time" id="time" className="time" onChange={onTimeChange}>
+                <select name="time" id="time" className="time" value={time} defaultValue={time} onChange={onTimeChange}>
                     <option value="all" selected>All Time</option>
                     <option value="year">Past Year</option>
                     <option value="month">Past Month</option>
