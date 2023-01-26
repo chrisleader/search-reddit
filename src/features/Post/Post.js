@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { getComments } from "../../helpers/reddit";
 import { setComments } from "../../store/redditSlice";
+import ReactMarkdown from "react-markdown";
 import formatNum from "../../helpers/formatNum";
 import formatTime from "../../helpers/formatTime";
 import './Post.css';
@@ -32,7 +33,7 @@ const Post = () => {
             <div className="Post">
                 <div className="PostRowTop">
                     <p>r/{post.subreddit}</p>
-                    <p>Posted by {post.author} {formatTime(post.created_utc)} ago</p>
+                    <p className="PostAuthor">Posted by {post.author} {formatTime(post.created_utc)} ago</p>
                 </div>
                 <div className="PostMiddle">
                         {!post.url.includes('reddit.com') && <a href={post.url} target="_blank"><h3>{post.title}</h3></a>}
@@ -46,7 +47,7 @@ const Post = () => {
                     && <img src={post.url_overridden_by_dest} alt={post.title} />}
                 </div>
                 <div className="PostText">
-                    <p>{post.selftext}</p>
+                    <ReactMarkdown>{post.selftext}</ReactMarkdown>
                 </div>
                 <div className="PostRowBottom">
                     <p>{formatNum(post.ups)} upvotes</p>

@@ -7,14 +7,14 @@
     padding: 0 10px;
     }
     
-    img {
+.NotFound img {
     display: block;
     margin: 0 auto;
     max-width: 100%;
     padding: 10px 0;
     }
     
-    p {
+.NotFound p {
     text-align: center;
     padding: 10px 0;
     }
