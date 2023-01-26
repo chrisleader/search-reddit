@@ -1,5 +1,6 @@
 const baseUrl = 'https://www.reddit.com';
 
+//This function retrieves Reddit posts for a given query, sort and time configuration.
 export const getPosts = async (query, sort, time) => {
     const searchSyntax = '/search.json?q=';
     const sortSyntax = '&sort=';
@@ -17,6 +18,7 @@ export const getPosts = async (query, sort, time) => {
     }
 };
 
+//This query retrieves comments for a given Reddit post URL.
 export const getComments = async (url) => {
     try {
         const response = await fetch(`${url}.json`);

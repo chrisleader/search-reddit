@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { getPosts } from "../../helpers/reddit";
 import { useSelector, useDispatch } from "react-redux";
-import { setResults } from "../../store/redditSlice";
+import { setResults, setQuery, setSort, setTime } from "../../store/redditSlice";
 import formatTime from "../../helpers/formatTime";
 import formatNum from "../../helpers/formatNum";
 import { ReactComponent as Logo } from './logo.svg'
@@ -11,9 +11,13 @@ import './Results.css';
 const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
     const { query, sort, time, results } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
+    const location = useLocation();
     const navigate = useNavigate();
+
+    //These thumbnail types will fail to load, so they are stored in an array to exclude them in rendering below.
     const thumbnailExceptions = ['self', 'default', 'nsfw', 'spoiler', 'image'];
 
+    //This updates the URL to match the selected query paramters.
     useEffect(() => {
         navigate(`?query=${query}&sort=${sort}&time=${time}`);
         (async () => {
@@ -21,6 +25,29 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
             dispatch(setResults(response));
         })();
     }, [sort, time]);
+
+    //This updates the document title to reflect the selected query.
+    useEffect(() => {
+        document.title = `Results for ${query}`;
+    }, [query]);
+
+    //This ensures that the query paramters persist upon page refresh.
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const query = searchParams.get('query');
+        const sort = searchParams.get('sort');
+        const time = searchParams.get('time');
+
+        if (query) {
+            dispatch(setQuery(query));
+        }
+        if (sort) {
+            dispatch(setSort(sort));
+        }
+        if (time) {
+            dispatch(setTime(time));
+        }
+    }, [location, dispatch]);
     
     return (
         <div className="ResultsContainer">
