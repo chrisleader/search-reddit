@@ -12,7 +12,7 @@ const Post = () => {
     const { results, comments } = useSelector(state => state.reddit);
     const { index } = useParams();
     const post = results[index].data;
-    const url = post.url;
+    const url = `https://www.reddit.com/${post.permalink}`
     const dispatch = useDispatch();
 
     //This stores the post's comments in the Redux store.
