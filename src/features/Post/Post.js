@@ -52,21 +52,24 @@ const Post = () => {
                 <div className="PostRowBottom">
                     <p>{formatNum(post.ups)} upvotes</p>
                     <p>{formatNum(post.num_comments)} comments</p>
+                    <a href={url} target="_blank">
+                        <p>View more on Reddit</p>
+                    </a>
                 </div>
             </div>
-            {comments.map((item, index) => (
-                    <div key={index} className="Comment"> 
-                        <div className="CommentRowTop">
-                            <p>{item.author}</p>
-                            <p>{formatTime(item.created_utc)} ago</p>
-                        </div>
-                        <div className="CommentRowMiddle">
-                            {item.body}
-                        </div>
-                        <div className="CommentRowBottom">
-                            <p>{formatNum(item.ups)} upvotes</p>
-                        </div>
+            {comments?.map((item, index) => (
+                <div key={index} className="Comment" > 
+                    <div className="CommentRowTop">
+                        <p>{item.author}</p>
+                        <p>{formatTime(item.created_utc)} ago</p>
                     </div>
+                    <div className="CommentRowMiddle">
+                        {item.body}
+                    </div>
+                    <div className="CommentRowBottom">
+                        <p>{formatNum(item.ups)} upvotes</p>
+                    </div>
+                </div>
             ))}
         </div>
     )

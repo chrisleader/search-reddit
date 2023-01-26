@@ -82,7 +82,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                     <option value="hour">Past Hour</option>
                 </select>
             </div>
-            {results.map((item, index) => (
+            {results?.map((item, index) => (
             <div key={index} className="Results">
             <div className="ResultsRowTop">
                     <p>r/{item.data.subreddit}</p>
