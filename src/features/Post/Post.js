@@ -83,6 +83,9 @@ const Post = () => {
                     </div>
                     <div className="CommentRowBottom">
                         <p>{formatNum(item.ups)} upvotes</p>
+                        <a href={`https://www.reddit.com${item.permalink}`} target="_blank">
+                            <p>View thread on Reddit</p>
+                        </a>
                     </div>
                 </div>
             ))}
