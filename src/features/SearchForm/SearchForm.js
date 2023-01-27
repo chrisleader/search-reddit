@@ -28,8 +28,9 @@ const SearchForm = ({ onSubmit }) => {
     return (
         <div className="SearchForm">
             <Logo className="logo"/>
-            <form onSubmit={onSubmit} type="search">
+            <form onSubmit={onSubmit} type="search" for="search">
                 <input
+                    id="search"
                     type="text"
                     value={localQuery}
                     onChange={handleChange}

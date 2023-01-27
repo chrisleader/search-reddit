@@ -36,8 +36,9 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                 <Link to="/" aria-label="Return to Reddit Search home">
                     <Logo className="ResultsLogo"/>
                 </Link>
-                <form onSubmit={onSubmit} type="search" className="ResultsForm">
+                <form onSubmit={onSubmit} type="search" className="ResultsForm" for="search">
                     <input
+                        id="search"
                         type="text"
                         placeholder={query}
                         value={query}
