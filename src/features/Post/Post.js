@@ -77,7 +77,7 @@ const Post = () => {
                         <p>{formatTime(item.created_utc)} ago</p>
                     </div>
                     <div className="CommentRowMiddle">
-                        {item.body}
+                        <p className="CommentText">{item.body}</p>
                     </div>
                     <div className="CommentRowBottom">
                         <p>{formatNum(item.ups)} upvotes</p>

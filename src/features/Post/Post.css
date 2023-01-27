@@ -25,7 +25,7 @@
     margin: 15px 0px;
 }
 
-.PostText p {
+.PostText, .CommentText {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
