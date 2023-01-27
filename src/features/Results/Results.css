@@ -140,6 +140,7 @@ select {
     margin: 0;
     flex: 1;
     align-self: flex-start;
+    padding-right: 25px
 }
 
 .Results p {
@@ -156,7 +157,6 @@ select {
     border-radius: 3px;
     justify-content: center;
     align-self: center;
-    padding-left: 25px
 }
 
 @media only screen and (max-width: 600px) {
