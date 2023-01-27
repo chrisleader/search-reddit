@@ -40,6 +40,11 @@
     box-shadow: 0 1px 2px 0 #ddd;
   }
 
+  .SearchForm button:active {
+    position: relative;
+    top: 1px;
+}
+
   #button-span {
     padding: 7px;
   }
