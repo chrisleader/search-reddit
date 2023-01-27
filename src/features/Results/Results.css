@@ -147,6 +147,7 @@ select {
     font-weight: 400;
     color: grey;
     margin: 0px 0px 10px 0px;
+    padding-right: 20px;
 }
 
 .Results img {
