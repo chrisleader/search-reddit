@@ -50,7 +50,7 @@ const Post = () => {
                 </div>
                 <div className="PostMiddle">
                         {!post.url.includes('reddit.com') && !post.url.includes('i.redd.it') && <a href={post.url} target="_blank"><h3>{post.title}</h3></a>}
-                        {post.url.includes('reddit.com') && <h3>{post.title}</h3>}
+                        {post.url.includes('reddit.com') || post.url.includes('i.redd.it') && <h3>{post.title}</h3>}
                 </div>
                 <div className ="PostMiddle">
                     {post.url_overridden_by_dest
