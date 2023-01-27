@@ -1,17 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setButtonClicked } from "../../store/redditSlice";
+import { setQuery, setButtonClicked } from "../../store/redditSlice";
 import { ReactComponent as Logo } from './logo.svg'
 import './SearchForm.css';
 
-const SearchForm = ({ onQueryChange, onSubmit }) => {
+const SearchForm = ({ onSubmit }) => {
+    const [localQuery, setLocalQuery] = useState('');
     const { query } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
 
-    //This ensures that the document title is always 'Reddit Search' after the component mounts.
+    //This ensures that the query is blank and the document title is always 'Reddit Search' after the component mounts.
     useEffect(() => {
+        setLocalQuery('');
         document.title = `Reddit Search`;
     }, []);
+
+    const handleChange = (e) => {
+        setLocalQuery(e.target.value);
+        dispatch(setQuery(e.target.value));
+    }
 
     //This updates the Redux store to save which button was clicked.
     const handleClick = (e) => {
@@ -24,8 +31,8 @@ const SearchForm = ({ onQueryChange, onSubmit }) => {
             <form onSubmit={onSubmit} type="search">
                 <input
                     type="text"
-                    value={query}
-                    onChange={onQueryChange}
+                    value={localQuery}
+                    onChange={handleChange}
                 />
                 <br />
                 <button

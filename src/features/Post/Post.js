@@ -16,18 +16,14 @@ const Post = () => {
     const location = useLocation();
     const dispatch = useDispatch();
 
-    //This stores the post's comments in the Redux store.
+    //This updates the document title to display the selected post's title and stores the post's comments in the Redux store.
     useEffect(() => {
+        document.title = post.title;
         (async () => {
           const response = await getComments(url);
           dispatch(setComments(response));
         })();
       }, []);
-
-    //This updates the document title to display the selected post's title after the component mounts.
-    useEffect(() => {
-        document.title = post.title;
-    }, []);
 
     return (
         <div className="PostContainer">
