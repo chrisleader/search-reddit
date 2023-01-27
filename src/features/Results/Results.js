@@ -37,7 +37,6 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                     <Logo className="ResultsLogo"/>
                 </Link>
                 <form onSubmit={onSubmit} type="search" className="ResultsForm">
-                    <label for="search">Search</label>
                     <input
                         id="search"
                         type="text"
@@ -45,6 +44,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                         value={query}
                         onChange={onQueryChange}
                         className="ResultsInput"
+                        aria-label="search"
                     />
                     
                 </form>

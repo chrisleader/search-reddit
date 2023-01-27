@@ -29,12 +29,12 @@ const SearchForm = ({ onSubmit }) => {
         <div className="SearchForm">
             <Logo className="logo"/>
             <form onSubmit={onSubmit} type="search">
-                <label for="search">Search</label>
                 <input
                     id="search"
                     type="text"
                     value={localQuery}
                     onChange={handleChange}
+                    aria-label="search"
                 />
                 <br />
                 <button
