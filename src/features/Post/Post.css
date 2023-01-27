@@ -57,7 +57,7 @@
 .PostRowBottom {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin: 15px 0px 0px 0px;
 }
@@ -127,7 +127,7 @@
 .CommentRowBottom {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin: 5px 0px;
 }

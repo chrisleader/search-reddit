@@ -86,7 +86,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
             <div key={index} className="Results">
             <div className="ResultsRowTop">
                     <p>r/{item.data.subreddit}</p>
-                    <p>Posted by {item.data.author} {formatTime(item.data.created_utc)} ago</p>
+                    <p>{item.data.author} {formatTime(item.data.created_utc)} ago</p>
                 </div>
                 <div className="ResultsRowMiddle">
                     <h3>

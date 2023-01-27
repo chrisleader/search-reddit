@@ -46,7 +46,7 @@ const Post = () => {
             <div className="Post">
                 <div className="PostRowTop">
                     <p>r/{post.subreddit}</p>
-                    <p className="PostAuthor">Posted by {post.author} {formatTime(post.created_utc)} ago</p>
+                    <p className="PostAuthor">{post.author} {formatTime(post.created_utc)} ago</p>
                 </div>
                 <div className="PostMiddle">
                         {!post.url.includes('reddit.com') && !post.url.includes('i.redd.it') && <a href={post.url} target="_blank"><h3>{post.title}</h3></a>}
