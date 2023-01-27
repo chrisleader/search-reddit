@@ -36,15 +36,17 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                 <Link to="/" aria-label="Return to Reddit Search home">
                     <Logo className="ResultsLogo"/>
                 </Link>
-                <form onSubmit={onSubmit} type="search" className="ResultsForm" for="search">
-                    <input
-                        id="search"
-                        type="text"
-                        placeholder={query}
-                        value={query}
-                        onChange={onQueryChange}
-                        className="ResultsInput"
-                    />
+                <form onSubmit={onSubmit} type="search" className="ResultsForm">
+                    <label for="search">
+                        <input
+                            id="search"
+                            type="text"
+                            placeholder={query}
+                            value={query}
+                            onChange={onQueryChange}
+                            className="ResultsInput"
+                        />
+                    </label>
                 </form>
                 <label for="sort" />
                 <select name="sort" id="sort" className="sort" value={sort} defaultValue={sort} onChange={onSortChange}>
