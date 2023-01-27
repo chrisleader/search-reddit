@@ -33,7 +33,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
     return (
         <div className="ResultsContainer">
             <div className="HeaderContainer">
-                <Link to="/">
+                <Link to="/" aria-label="Return to Reddit Search home">
                     <Logo className="ResultsLogo"/>
                 </Link>
                 <form onSubmit={onSubmit} type="search" className="ResultsForm">
@@ -72,6 +72,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                 <div className="ResultsRowMiddle">
                     <h3>
                         <Link
+                            aria-label={`View post ${item.data.title}`}
                             to={`/posts/${index}/${item.data.id}`}
                             onClick={
                                 () => {
