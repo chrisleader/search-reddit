@@ -29,14 +29,13 @@ const SearchForm = ({ onSubmit }) => {
         <div className="SearchForm">
             <Logo className="logo"/>
             <form onSubmit={onSubmit} type="search">
-                <label for="search">
-                    <input
-                        id="search"
-                        type="text"
-                        value={localQuery}
-                        onChange={handleChange}
-                    />
-                </label>
+                <label for="search">Search</label>
+                <input
+                    id="search"
+                    type="text"
+                    value={localQuery}
+                    onChange={handleChange}
+                />
                 <br />
                 <button
                     id="RedditSearch"

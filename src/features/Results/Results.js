@@ -37,16 +37,16 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                     <Logo className="ResultsLogo"/>
                 </Link>
                 <form onSubmit={onSubmit} type="search" className="ResultsForm">
-                    <label for="search">
-                        <input
-                            id="search"
-                            type="text"
-                            placeholder={query}
-                            value={query}
-                            onChange={onQueryChange}
-                            className="ResultsInput"
-                        />
-                    </label>
+                    <label for="search">Search</label>
+                    <input
+                        id="search"
+                        type="text"
+                        placeholder={query}
+                        value={query}
+                        onChange={onQueryChange}
+                        className="ResultsInput"
+                    />
+                    
                 </form>
                 <label for="sort" />
                 <select name="sort" id="sort" className="sort" value={sort} defaultValue={sort} onChange={onSortChange}>
