@@ -24,7 +24,7 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
             const response = await getPosts(query, sort, time);
             dispatch(setResults(response));
         })();
-    }, [sort, time]);
+    }, [query, sort, time]);
 
     //This updates the document title to reflect the selected query.
     useEffect(() => {
@@ -32,23 +32,23 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
     }, [query]);
 
     //This ensures that the query paramters persist upon page refresh.
-    useEffect(() => {
-        const searchParams = new URLSearchParams(location.search);
-        const query = searchParams.get('query');
-        const sort = searchParams.get('sort');
-        const time = searchParams.get('time');
+    // useEffect(() => {
+    //     const searchParams = new URLSearchParams(location.search);
+    //     const query = searchParams.get('query');
+    //     const sort = searchParams.get('sort');
+    //     const time = searchParams.get('time');
 
-        if (query) {
-            dispatch(setQuery(query));
-        }
-        if (sort) {
-            dispatch(setSort(sort));
-        }
-        if (time) {
-            dispatch(setTime(time));
-        }
-    }, [location]);
-    
+    //     if (query) {
+    //         dispatch(setQuery(query));
+    //     }
+    //     if (sort) {
+    //         dispatch(setSort(sort));
+    //     }
+    //     if (time) {
+    //         dispatch(setTime(time));
+    //     }
+    // }, [location]);
+
     return (
         <div className="ResultsContainer">
             <div className="HeaderContainer">
@@ -90,7 +90,16 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                 </div>
                 <div className="ResultsRowMiddle">
                     <h3>
-                        <Link to={`/posts/${index}`}>{item.data.title}</Link>
+                        <Link
+                            to={`/posts/${index}/${item.data.id}`}
+                            onClick={
+                                () => {
+                                    //e.preventDefault();
+                                    dispatch(setResultsIndex(index));
+                                }
+                            }>
+                            {item.data.title}
+                        </Link>
                     </h3>
                     {thumbnailExceptions.indexOf(item.data.thumbnail) === -1 && <img src={item.data.thumbnail} alt={item.data.title} />}
                 </div>

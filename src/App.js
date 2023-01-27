@@ -48,7 +48,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<SearchForm onQueryChange={onQueryChange} onSubmit={onSubmit} />} />
         <Route path="/results/*" element={<Results onQueryChange={onQueryChange} onSortChange={onSortChange} onTimeChange={onTimeChange} onSubmit={onSubmit} />} />
-        <Route path="/posts/:index" element={<Post />} />
+        <Route path="/posts/:index/*" element={<Post />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

@@ -16,8 +16,6 @@ const Post = () => {
     const location = useLocation();
     const dispatch = useDispatch();
 
-    dispatch(setResultsIndex(index));
-
     //This stores the post's comments in the Redux store.
     useEffect(() => {
         (async () => {
@@ -30,16 +28,6 @@ const Post = () => {
     useEffect(() => {
         document.title = post.title;
     }, []);
-
-    //This ensures that the query paramters persist upon page refresh.
-    // useEffect(() => {
-    //     const searchParams = new URLSearchParams(location.search);
-    //     const index = searchParams.get('index');
-
-    //     if (index) {
-    //         dispatch(setResultsIndex(index));
-    //     }
-    // }, [location, dispatch]);
 
     return (
         <div className="PostContainer">
@@ -64,10 +52,10 @@ const Post = () => {
                 </div>
                 <div className="PostRowBottom">
                     <p>{formatNum(post.ups)} upvotes</p>
-                    <p>{formatNum(post.num_comments)} comments</p>
                     <a href={url} target="_blank">
                         <p>View on Reddit</p>
                     </a>
+                    <p>{formatNum(post.num_comments)} comments</p>
                 </div>
             </div>
             {comments?.map((item, index) => (
