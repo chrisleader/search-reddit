@@ -19,6 +19,8 @@
 .env.production.local
 sample.json
 commentSample.json
+reddit.html
+redditmanifest.json
 
 npm-debug.log*
 yarn-debug.log*
