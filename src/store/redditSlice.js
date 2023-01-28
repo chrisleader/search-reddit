@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// redditSlice.js initializes and stores the state for most aspects of the app. Redux's extensible architecture allows the implementation of additional slices in the future. The functions commented out below could also be used in the future to support animations across different query states, and as a template for animating other elements upon loading, like posts and comments.
+// redditSlice.js initializes and stores the state for most aspects of the app. Redux's extensible architecture allows for the implementation of additional slices in the future. The functions commented out below could also be used in the future to support animations across different query states, and as a template for animating other elements upon loading, like posts and comments.
 
 const initialState = {
   query: '',
