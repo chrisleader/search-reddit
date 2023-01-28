@@ -1,8 +1,10 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist'
+import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import redditReducer from './redditSlice';
 import thunk from 'redux-thunk'
+
+// This index.js file configures the Reudx store. persistReducer is also configured here to ensure state persist across a session.
 
 const persistConfig = {
     key: 'root',

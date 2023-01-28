@@ -1,3 +1,5 @@
+// This helper function calculates time elapsed since a given UTC value.
+
 const secondsSinceEpoch = Math.round(Date.now() / 1000);
 
 const formatTime = (created_utc) => {

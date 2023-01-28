@@ -8,6 +8,8 @@ import formatNum from "../../helpers/formatNum";
 import formatTime from "../../helpers/formatTime";
 import './Post.css';
 
+// The Post.js component renders a selected post from the Results.js component, as well as comments for that post.
+
 const Post = () => {
     const { results, comments } = useSelector(state => state.reddit);
     const { index } = useParams();

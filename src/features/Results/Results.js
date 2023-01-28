@@ -8,6 +8,8 @@ import formatNum from "../../helpers/formatNum";
 import { ReactComponent as Logo } from './logo.svg'
 import './Results.css';
 
+// The Results.js component renders the results from a user's query, and also provides a search form and filters for further queries.
+
 const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
     const { query, sort, time, results } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
@@ -79,7 +81,6 @@ const Results = ({onQueryChange, onSortChange, onTimeChange, onSubmit}) => {
                             to={`/posts/${index}/${item.data.id}`}
                             onClick={
                                 () => {
-                                    //e.preventDefault();
                                     dispatch(setResultsIndex(index));
                                 }
                             }>

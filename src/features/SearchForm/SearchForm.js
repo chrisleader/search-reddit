@@ -4,6 +4,8 @@ import { setQuery, setButtonClicked } from "../../store/redditSlice";
 import { ReactComponent as Logo } from './logo.svg'
 import './SearchForm.css';
 
+// The SearchForm.js component renders the initial "/" route, where a user can enter a query and choose to search all of Reddit or jump to the first result if, à la Google, they're feeling lucky.
+
 const SearchForm = ({ onSubmit }) => {
     const [localQuery, setLocalQuery] = useState('');
     const { query } = useSelector(state => state.reddit);

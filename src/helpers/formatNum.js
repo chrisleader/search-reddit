@@ -1,3 +1,5 @@
+// This helper function reformats Reddit's UTC timestamps for human readability.
+
 const formatNum = (num) => {
     if (num < 1000) {
         return num.toString();

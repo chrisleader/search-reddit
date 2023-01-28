@@ -10,6 +10,10 @@ import { persistStore } from 'redux-persist';
 
 let persistor = persistStore(store);
 
+/*
+This project uses React, React Router, Redux, and Redux Persist, among other packages. These are imported and configured here in index.js. Package details can be viewed in the package.json file.
+*/
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
