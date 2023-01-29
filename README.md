@@ -10,6 +10,7 @@ Search Reddit provides a simple interface for exploring Reddit. You can view a c
 * View a post and top comments
 * Navigate off-site from a post to view it on Reddit
 * Navigate off-site from a comment to view its full thread on Reddit
+* Find an easter egg 🛸
 
 ## Technology
 Search Reddit is built with React v18, React Router v6, and Redux v8, among other packages. Some notes:
@@ -17,7 +18,6 @@ Search Reddit is built with React v18, React Router v6, and Redux v8, among othe
 * React components are configured across index.js, App.js, SearchForm.js, Results.js, Posts.js and NotFound.js.
 * redditSlice.js initializes and stores the state for most aspects of the app. Redux's extensible architecture allows for the implementation of additional slices in the future should the project be expanded further.
 * persistReducer is also utilized to ensure state persistence across a session.
-* HashRouter is implemented in index.js instead of BrowserRouter to avoid [Netlify rendering a 404 on page refresh](https://stackoverflow.com/questions/58065603/netlify-renders-404-on-page-refresh-using-react-and-react-router).
 * React Router routes are configured in App.js.
 * Jest is used for testing the helper functions.
 * Lighthouse gave scores of 100 for performance, accessibility, best practices, and SEO:
