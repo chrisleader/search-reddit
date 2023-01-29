@@ -34,9 +34,9 @@ Any of the following would be great additions to this project!
 * Exploring subreddits
 * Returning more than 25 search results (via pagination or, ideally, infinite scrolling)
 * Animations and transitions, especially to indicate load status while awaiting an API response for results and posts
-* Add back buttons and deploy as a progressive web app
 * Scroll restoration on mobile
 * Dark mode
+* Progressive web app support (back buttons 🔙 will need ot be added)
 
 ### Bugs
 * There's a known issue in which the back button behavior is buggy (specifically on the results page). This is due to some limitations with and complexity around the React Router implementation. Ideally, forward and backward navigation should be identical to the experience of searching Google.
