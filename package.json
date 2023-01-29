@@ -1,7 +1,16 @@
 {
-  "name": "testing-connection",
-  "version": "0.1.0",
-  "private": true,
+  "name": "search-reddit",
+  "version": "1.0.0",
+  "author": "Chris Leader",
+  "description": "Search Reddit provides a simple interface for exploring Reddit.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisleader/search-reddit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chrisleader/search-reddit/issues"
+  },
+  "homepage": "https://github.com/chrisleader/search-reddit#readme",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
