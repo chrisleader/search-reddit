@@ -33,4 +33,4 @@ Any of the following would be great additions to this project!
 * Dark mode
 
 ### Bugs
-* There's a known issue in which the back button behavior is buggy (specifically on the results page). This is due to some limitations with and complexity around the React Router implementation. Ideally, forward and backward navigation should be identical to how searching Google operates.
+* There's a known issue in which the back button behavior is buggy (specifically on the results page). This is due to some limitations with and complexity around the React Router implementation. Ideally, forward and backward navigation should be identical to the experience of searching Google.
