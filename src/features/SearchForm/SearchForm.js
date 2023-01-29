@@ -43,7 +43,7 @@ const SearchForm = ({ onSubmit }) => {
                     id="RedditSearch"
                     type="submit"
                     onClick={handleClick}>
-                    Reddit Search
+                    Search Reddit
                 </button>
                 <span id="button-span"/>
                 <button
