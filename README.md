@@ -29,6 +29,7 @@ Any of the following would be great additions to this project!
 
 ### Features
 * Exploring subreddits
+* Returning more than 25 search results (via pagination or, ideally, infinite scrolling)
 * Animations and transitions, especially to indicate load status while awaiting an API response for results and posts
 * Scroll restoration on mobile
 * Dark mode
