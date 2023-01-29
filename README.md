@@ -25,7 +25,12 @@ The (very simple Google-inspired) initial wireframe for this project can be foun
 
 ## Future Enhancements
 Any of the following would be great additions to this project!
-* There's a known issue in which the back button behavior is buggy (specifically on the results page). This is due to some limitations with and complexity around the React Router implementation. Ideally, forward and backward navigation should be identical to how searching Google operates.
-* Add animations and transitions, especially to indicate load status while awaiting an API response for results and posts.
+
+### Features
+* Exploring subreddits
+* Animations and transitions, especially to indicate load status while awaiting an API response for results and posts
 * Scroll restoration on mobile
 * Dark mode
+
+### Bugs
+* There's a known issue in which the back button behavior is buggy (specifically on the results page). This is due to some limitations with and complexity around the React Router implementation. Ideally, forward and backward navigation should be identical to how searching Google operates.
