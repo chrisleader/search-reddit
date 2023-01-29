@@ -36,7 +36,7 @@ Any of the following would be great additions to this project!
 * Animations and transitions, especially to indicate load status while awaiting an API response for results and posts
 * Scroll restoration on mobile
 * Dark mode
-* Progressive web app support (back buttons 🔙 will need ot be added)
+* Progressive web app support (back buttons 🔙 will need to be added)
 
 ### Bugs
 * There's a known issue in which the back button behavior is buggy (specifically on the results page). This is due to some limitations with and complexity around the React Router implementation. Ideally, forward and backward navigation should be identical to the experience of searching Google.
