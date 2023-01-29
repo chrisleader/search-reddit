@@ -1,6 +1,6 @@
 {
-  "short_name": "Reddit Search",
-  "name": "Reddit Search",
+  "short_name": "Search Reddit",
+  "name": "Search Reddit",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
