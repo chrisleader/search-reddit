@@ -19,6 +19,7 @@ Search Reddit is built with React v18, React Router v6, and Redux v8, among othe
 * persistReducer is also utilized to ensure state persistence across a session.
 * HashRouter is implemented in index.js instead of BrowserRouter to avoid [Netlify rendering a 404 on page refresh](https://stackoverflow.com/questions/58065603/netlify-renders-404-on-page-refresh-using-react-and-react-router).
 * React Router routes are configured in App.js.
+* Jest is used for testing the helper functions.
 
 ## Wireframe
 The (very simple Google-inspired) initial wireframe for this project can be found [here](https://www.figma.com/file/F1tokKFFEYAwaG44DK1eLh/Reddit-Client?node-id=0%3A1&t=5uDNHUXfGCIzeNVP-1). The rest of the design was produced through iteration with CSS as the project evolved.
