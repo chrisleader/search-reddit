@@ -14,7 +14,7 @@ const SearchForm = ({ onSubmit }) => {
     //This ensures that the query is blank and the document title is always 'Reddit Search' after the component mounts.
     useEffect(() => {
         setLocalQuery('');
-        document.title = `Reddit Search`;
+        document.title = `Search Reddit`;
     }, []);
 
     const handleChange = (e) => {
