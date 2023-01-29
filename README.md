@@ -1,7 +1,7 @@
 # Search Reddit
 
 ## Overview
-Search Reddit provides a simple interface for exploring Reddit. You can view a continously deployed version of this project [on Netlify here](https://searchreddit.netlify.app). 
+Search Reddit provides a simple interface for exploring Reddit. You can view a continuously deployed version of this project [on Netlify here](https://searchreddit.netlify.app). 
 
 ## Features
 * Search any Reddit topic and view the top 25 results
