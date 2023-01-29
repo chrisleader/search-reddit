@@ -1,20 +1,53 @@
-.NotFound {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 0 10px;
-    }
-    
-.NotFound img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    padding: 10px 0;
-    }
-    
-.NotFound p {
+.NotFoundContainer {
+    --width: 500px;
+    --x-speed: 13s;
+    --y-speed: 7s;
+    --transition-speed: 2.2s;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+.NotFoundText {
+    position: absolute;
+    font-size: xx-large;
     text-align: center;
-    padding: 10px 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+    
+.lol { 
+    position: absolute;
+    width: var(--width);
+    height: auto;
+    animation: rotation 10s infinite linear;
+}
+    
+.x {
+    animation: x var(--x-speed) linear infinite alternate;
+}
+
+.y {
+    animation: y var(--y-speed) linear infinite alternate;
+}
+    
+@keyframes x {
+    100% {
+        transform: translateX(calc(100vw - var(--width)));
     }
+}
+
+@keyframes y {
+    100% {
+        transform: translateY(calc(100vh - var(--width)));
+    }
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}

@@ -11,10 +11,22 @@ const NotFound = () => {
     }, []);
 
     return (
-        <div className="NotFound">
-            <img src='/redditfail.png' />
-            <p>Not all who wander are lost.</p>
-            <Link to='/'>Return home.</Link>
+        <div className="NotFoundContainer">
+            <div className="NotFoundText">
+                <p>✨ Not all who wander are lost. 🛸 ✨
+                    <br />
+                    <Link to='/'>Return home.</Link>
+                </p>
+            </div>
+            <div className="ImageContainer">
+                <div className="x">
+                    <div className="y" >
+                    <Link to='/'>
+                        <img className="lol" src='/redditfail.png' />
+                    </Link>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
