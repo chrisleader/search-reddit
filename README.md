@@ -22,7 +22,7 @@ Search Reddit is built with React v18, React Router v6, and Redux v8, among othe
 * Jest is used for testing the helper functions.
 * Lighthouse gave scores of 100 for performance, accessibility, best practices, and SEO:
 
-<img width="600" alt="Lighthouse Scores" src="https://user-images.githubusercontent.com/6752562/215314328-297e1da6-8b6f-4010-a2d4-1fc0d113ac04.png">
+<p align="center"><img width="600" alt="Lighthouse Scores" src="https://user-images.githubusercontent.com/6752562/215314328-297e1da6-8b6f-4010-a2d4-1fc0d113ac04.png"></P
 
 ## Wireframe
 The (very simple Google-inspired) initial wireframe for this project can be found [here](https://www.figma.com/file/F1tokKFFEYAwaG44DK1eLh/Reddit-Client?node-id=0%3A1&t=5uDNHUXfGCIzeNVP-1). The rest of the design was produced through iteration with CSS as the project evolved.
