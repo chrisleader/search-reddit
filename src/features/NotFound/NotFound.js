@@ -13,10 +13,10 @@ const NotFound = () => {
     return (
         <div className="NotFoundContainer">
             <div className="NotFoundText">
-                <p>✨ Not all who wander are lost. 🛸 ✨
+                    <Link to='/'>
+                    Not all who wander are lost. 👾🛸🪐
                     <br />
-                    <Link to='/'>Return home.</Link>
-                </p>
+                    ✨ Return home. ✨</Link>
             </div>
             <div className="ImageContainer">
                 <div className="x">

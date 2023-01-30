@@ -8,6 +8,7 @@
 }
 
 .NotFoundText {
+    z-index: 2;
     position: absolute;
     font-size: xx-large;
     text-align: center;
@@ -17,6 +18,7 @@
 }
     
 .lol { 
+    z-index: 1;
     position: absolute;
     width: var(--width);
     height: auto;

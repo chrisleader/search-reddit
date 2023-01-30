@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setQuery, setButtonClicked } from "../../store/redditSlice";
 import { ReactComponent as Logo } from './logo.svg'
 import './SearchForm.css';
@@ -8,7 +8,6 @@ import './SearchForm.css';
 
 const SearchForm = ({ onSubmit }) => {
     const [localQuery, setLocalQuery] = useState('');
-    const { query } = useSelector(state => state.reddit);
     const dispatch = useDispatch();
 
     //This ensures that the query is blank and the document title is always 'Reddit Search' after the component mounts.

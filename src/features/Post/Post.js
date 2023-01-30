@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getComments } from "../../helpers/reddit";
-import { setComments, setResultsIndex } from "../../store/redditSlice";
+import { setComments } from "../../store/redditSlice";
 import ReactMarkdown from "react-markdown";
 import formatNum from "../../helpers/formatNum";
 import formatTime from "../../helpers/formatTime";
@@ -15,7 +15,6 @@ const Post = () => {
     const { index } = useParams();
     const post = results[index].data;
     const url = `https://www.reddit.com/${post.permalink}`
-    const location = useLocation();
     const dispatch = useDispatch();
 
     //This updates the document title to display the selected post's title and stores the post's comments in the Redux store.
