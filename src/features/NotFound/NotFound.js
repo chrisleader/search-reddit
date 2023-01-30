@@ -14,7 +14,7 @@ const NotFound = () => {
         <div className="NotFoundContainer">
             <div className="NotFoundText">
                     <Link to='/'>
-                    Not all who wander are lost. 👾🛸🪐
+                    Not all those who wander are lost. 👾🛸🪐
                     <br />
                     ✨ Return home. ✨</Link>
             </div>
